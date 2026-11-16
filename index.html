@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>直播带货间 · Live Commerce</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="room">
+  <!-- 直播画面区（演示用渐变背景代替视频流） -->
+  <div class="stage">
+    <div class="stage-glow"></div>
+    <div class="stage-host">🎙️</div>
+
+    <!-- 顶部信息条 -->
+    <div class="top-bar">
+      <div class="host-chip">
+        <span class="avatar">👩‍🎤</span>
+        <div>
+          <b>小橘的好物间</b>
+          <small><span class="live-dot"></span>LIVE · <span id="viewerCount">0</span> 人在线</small>
+        </div>
+        <button id="followBtn" class="follow">＋关注</button>
+      </div>
+      <button class="close-btn" onclick="alert('演示项目')">✕</button>
+    </div>
+
+    <!-- 弹幕层 -->
+    <div id="danmuLayer" class="danmu-layer"></div>
+
+    <!-- 底部互动区 -->
+    <div class="bottom-bar">
+      <div class="comment-input" id="commentBox">💬 说点什么…</div>
+      <button class="icon-act" id="shareBtn">↗</button>
+      <button class="icon-act like" id="likeBtn">❤️<span id="likeCount">0</span></button>
+    </div>
+    <div id="likeLayer" class="like-layer"></div>
+  </div>
+
+  <!-- 右侧商品面板 -->
+  <aside class="shop-panel">
+    <div class="panel-head">
+      <strong>讲解中</strong>
+      <span id="currentIndex" class="muted">1/6</span>
+    </div>
+
+    <!-- 讲解中的商品大卡 -->
+    <div id="heroCard" class="hero-card"></div>
+
+    <!-- 商品列表 -->
+    <div class="panel-head"><strong>全部商品</strong></div>
+    <div id="goodsList" class="goods-list"></div>
+  </aside>
+</div>
+
+<!-- 下单弹层 -->
+<div id="orderModal" class="modal" hidden>
+  <div class="modal-card">
+    <div id="orderBody"></div>
+    <div class="btn-row">
+      <button class="ghost" id="orderCancel">再想想</button>
+      <button class="primary" id="orderConfirm">立即抢购</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="goods.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
